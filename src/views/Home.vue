@@ -7,7 +7,12 @@
       <v-toolbar-items class="floating">
         <v-btn icon>
           <v-icon>search</v-icon>
-          <input class="input" v-model="searchValue" type="text" placeholder="Write your Pokemon">
+          <input
+            class="input"
+            v-model="searchValue"
+            type="text"
+            placeholder="Write your Pokemon"
+          />
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
@@ -15,7 +20,7 @@
     <v-card
       hover
       class="ma-3"
-      v-for="(pokemon) in filteredPokes"
+      v-for="pokemon in filteredPokes"
       v-bind:key="pokemon.name"
       :to="'/pokemon/' + pokemon.id"
     >
@@ -24,7 +29,7 @@
           <v-subheader class="poke">
             #{{ pokemon.id }}
             <v-list-tile-avatar class="pokeFoto">
-              <img :src="pokeImg + pokemon.id + '.png'">
+              <img :src="pokeImg + pokemon.id + '.png'" />
             </v-list-tile-avatar>
             {{ pokemon.name }}
           </v-subheader>
@@ -40,22 +45,22 @@ export default {
     return {
       searchValue: [],
       index: 1,
-      pokeImg: "https://pokeres.bastionbot.org/images/pokemon/"
+      pokeImg: "https://pokeres.bastionbot.org/images/pokemon/",
     };
   },
 
   computed: {
     filteredPokes() {
-      return this.pokemons.filter(pokemon =>
+      return this.pokemons.filter((pokemon) =>
         pokemon.name.includes(this.searchValue)
       );
     },
     pokemons() {
       return this.$store.getters.getAllPokes;
-    }
+    },
   },
 
-  created() {}
+  created() {},
 };
 </script>
 <style>

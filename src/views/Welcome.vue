@@ -6,7 +6,10 @@
           <v-img max-width="500px" src="tindermon.png" lazy-src="tindermon.png">
             <template v-slot:placeholder>
               <v-layout fill-height align-center justify-center ma-0>
-                <v-progress-circular indeterminate color="blue"></v-progress-circular>
+                <v-progress-circular
+                  indeterminate
+                  color="blue"
+                ></v-progress-circular>
               </v-layout>
             </template>
           </v-img>
@@ -17,10 +20,13 @@
             src="https://art.ngfiles.com/images/386000/386577_stardoge_8-bit-pokeball.png?f1446737358"
             lazy-src="https://art.ngfiles.com/images/386000/386577_stardoge_8-bit-pokeball.png?f1446737358"
           >
-            <router-link class="link" to="/home"></router-link>
+            <router-link class="link" to="/home">GO!!!</router-link>
             <template v-slot:placeholder>
               <v-layout fill-height align-center justify-center ma-0>
-                <v-progress-circular indeterminate color="blue"></v-progress-circular>
+                <v-progress-circular
+                  indeterminate
+                  color="blue"
+                ></v-progress-circular>
               </v-layout>
             </template>
           </v-img>
@@ -51,8 +57,8 @@ export default {};
 }
 
 .link {
-  font-size: 15px;
-  color: white;
+  font-size: 30px;
+  color: black;
   display: block;
   z-index: -1;
   margin-top: 315px;
